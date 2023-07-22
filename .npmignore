@@ -1,0 +1,7 @@
+src/**
+test
+coverage
+tsconfig.json
+.*
+*.tgz
+example

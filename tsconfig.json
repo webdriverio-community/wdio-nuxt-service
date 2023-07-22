@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+      "module": "ESNext",
+      "target": "ES2020",
+      "baseUrl": "src",
+      "outDir": "./dist",
+      "moduleResolution": "node",
+      "strictBindCallApply": true,
+      "strictPropertyInitialization": true,
+      "strictNullChecks": true,
+      "declaration": true,
+      "declarationMap": true,
+      "skipLibCheck": true,
+      "sourceMap": true,
+      "allowSyntheticDefaultImports": true,
+      "newLine": "lf",
+      "noEmitOnError": true,
+      "lib": ["ES2020"],
+      "noImplicitAny": true
+    },
+    "include": [
+      "src/**/*",
+      "src/cjs/package.json"
+    ],
+    "ignore": ["node_modules", "dist"]
+  }
