@@ -10,6 +10,14 @@ This service helps you to launch your application when using [Nuxt](https://nuxt
 
 ## Installation
 
+If you are getting started with WebdriverIO you can use the configuration wizard to set everything up:
+
+```sh
+npm init wdio@latest .
+```
+
+It will detect your project as a Nuxt project and will install all necessary plugins for you. If you are adding this service on an existing setup, you can always install it via:
+
 ```bash
 npm install wdio-nuxt-service --save-dev
 ```
@@ -35,7 +43,7 @@ export const config = {
     // ...
     services: [
         ['nuxt', {
-            configFile: './custom.nuxt.conf.ts'
+            rootDir: './packages/nuxt'
         }]
     ],
     // ...
@@ -54,12 +62,52 @@ await expect($('aria/Welcome to Nuxt!')).toBePresent()
 
 ## Options
 
-### `configFile`
+### `rootDir`
 
-Path to config file.
+Root directory of the project.
 
 Type: `string`<br />
-Default: _nuxt.config.ts_
+Default: _process.cwd()_
+
+### `dotenv`
+
+Environment file to be loaded before the server starts.
+
+Type: `string`<br />
+Default: _.env_
+
+### `hostname`
+
+Hostname to start the server on.
+
+Type: `string`<br />
+Default: _localhost_
+
+### `port`
+
+Port to start the server on.
+
+Type: `number`<br />
+Default: `process.env.NUXT_PORT || config.devServer.port`
+
+### `https`
+
+Set to true if test server should be started on https (certificates need to be configured in Nuxt config).
+
+Type: `boolean`<br />
+Default: `false`
+
+### `sslCert`
+
+SSL certificate to be used for starting the server on https.
+
+Type: `string`
+
+### `sslKey`
+
+SSL key to be used for starting the server on https.
+
+Type: `string`
 
 ----
 
