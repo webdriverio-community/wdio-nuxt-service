@@ -67,21 +67,21 @@ await expect($('aria/Welcome to Nuxt!')).toBePresent()
 Root directory of the project.
 
 Type: `string`<br />
-Default: _process.cwd()_
+Default: `process.cwd()`
 
 ### `dotenv`
 
 Environment file to be loaded before the server starts.
 
 Type: `string`<br />
-Default: _.env_
+Default: `.env`
 
 ### `hostname`
 
 Hostname to start the server on.
 
 Type: `string`<br />
-Default: _localhost_
+Default: `localhost`
 
 ### `port`
 
