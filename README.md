@@ -1,3 +1,9 @@
+<p align="center">
+    <a href="https://webdriver.io/">
+        <img alt="WebdriverIO loves Nuxt" src="https://raw.githubusercontent.com/webdriverio-community/wdio-nuxt-service/main/.github/assets/banner.png">
+    </a>
+</p>
+
 # WDIO Nuxt Service [![Tests](https://github.com/webdriverio-community/wdio-nuxt-service/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/webdriverio-community/wdio-nuxt-service/actions/workflows/test.yml)
 
 This service helps you to launch your application when using [Nuxt](https://nuxt.com/) as build tool. It automatically starts the Nuxt server using your `nuxt.conf.js` before launching the test.
