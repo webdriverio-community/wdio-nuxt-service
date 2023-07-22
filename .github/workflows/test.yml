@@ -26,5 +26,8 @@ jobs:
         with:
           run: |
             ln -s ../ ./node_modules/wdio-nuxt-service
+            cd example
+            npm i
+            cd ..
             npm test
 
