@@ -125,8 +125,7 @@ export const config: Options.Testrunner = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: [['nuxt', {
-        configFile: path.resolve(__dirname, '..', 'example', 'nuxt.config.ts'),
-        configRoot: path.resolve(__dirname, '..', 'example')
+        rootDir: path.resolve(__dirname, '..', 'example')
     }]],
     //
     // Framework you want to run your specs with.

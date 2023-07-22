@@ -6,5 +6,6 @@ export const launcher = NuxtServiceLauncher
 export default class NuxtService {
     beforeSession (config: Options.Testrunner) {
         config.baseUrl = process.env.WDIO_BASE_URL
+        console.log('BASE URL IS', config.baseUrl)
     }
 }
