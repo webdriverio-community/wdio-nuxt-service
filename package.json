@@ -80,7 +80,7 @@
   "dependencies": {
     "@nuxt/kit": "^3.11.0",
     "@nuxt/schema": "^3.11.0",
-    "@wdio/logger": "^8.28.0",
+    "@wdio/logger": "^9.0.4",
     "c12": "^1.10.0",
     "chokidar": "^3.6.0",
     "get-port": "^7.0.0",
