@@ -12,22 +12,26 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js
+      - name: ⬇️ Checkout Code
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: 🐢 Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - name: Install Dependencies
-        run: npm ci
-      - name: Install Example Project Dependencies
-        run: npm ci
-        working-directory: ./example
-      - name: Build
-        run: npm run build
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: ⬇️ Install Dependencies
+        run: pnpm install
+
+      - name: 🏗️ Build
+        run: pnpm run build
+
       - name: 🧪 Run Tests
         uses: GabrielBB/xvfb-action@v1
         with:
-          run: |
-            ln -s ../ ./node_modules/wdio-nuxt-service
-            npm test
+          run: npm test
 
