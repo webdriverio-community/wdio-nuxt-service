@@ -3,7 +3,6 @@ exports.launcher = class CJSNuxtServiceLauncher {
 
     constructor (options: any) {
         this.instance = import('../index.js').then((NuxtServiceLauncher) => (
-            // eslint-disable-next-line new-cap, @typescript-eslint/no-unsafe-argument
             new NuxtServiceLauncher.launcher(options)
         ))
     }

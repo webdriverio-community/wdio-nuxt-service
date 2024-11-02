@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://webdriver.io/">
-        <img alt="WebdriverIO loves Nuxt" src="https://raw.githubusercontent.com/webdriverio-community/wdio-nuxt-service/main/.github/assets/banner.png">
+        <img alt="WebdriverIO loves Nuxt" width="80%" src="https://raw.githubusercontent.com/webdriverio-community/wdio-nuxt-service/main/.github/assets/banner.png">
     </a>
 </p>
 

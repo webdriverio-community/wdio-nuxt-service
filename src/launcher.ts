@@ -2,7 +2,7 @@ import { existsSync, readdirSync } from 'node:fs'
 
 import logger from '@wdio/logger'
 import getPort from 'get-port'
-import chokidar from 'chokidar'
+import chokidar, { type FSWatcher } from 'chokidar'
 import { listen, type HTTPSOptions } from 'listhen'
 import { setupDotenv } from 'c12'
 import { toNodeListener } from 'h3'
@@ -25,7 +25,7 @@ export class NuxtServiceLauncher {
     #options: Required<NuxtServiceOptions>
     #currentHandler?: RequestListener
     #currentNuxt?: Nuxt
-    #distWatcher?: chokidar.FSWatcher
+    #distWatcher?: FSWatcher
 
     constructor (options: NuxtServiceOptions) {
         log.info(`Initiate Nuxt Service (v${pkg.version})`)
@@ -110,7 +110,6 @@ export class NuxtServiceLauncher {
                     { ignoreInitial: true, depth: 0 }
                 )
                 this.#distWatcher.on('unlinkDir', () => {
-                    // eslint-disable-next-line @typescript-eslint/no-floating-promises
                     dLoad(true, '.nuxt/dist directory has been removed')
                 })
 
@@ -160,7 +159,6 @@ export class NuxtServiceLauncher {
             }
             const relativePath = relative(this.#options.rootDir, file)
             if (file.match(/(nuxt\.config\.(js|ts|mjs|cjs)|\.nuxtignore|\.env|\.nuxtrc)$/)) {
-                // eslint-disable-next-line @typescript-eslint/no-floating-promises
                 dLoad(true, `${relativePath} updated`)
             }
 
@@ -173,7 +171,6 @@ export class NuxtServiceLauncher {
 
             if (isDirChange) {
                 if (reloadDirs.includes(file)) {
-                    // eslint-disable-next-line @typescript-eslint/no-floating-promises
                     dLoad(true, `Directory \`${relativePath}/\` ${event === 'addDir' ? 'created' : 'removed'}`)
                     return
                 }
@@ -181,7 +178,6 @@ export class NuxtServiceLauncher {
 
             if (isFileChange) {
                 if (file.match(/(app|error|app\.config)\.(js|ts|mjs|jsx|tsx|vue)$/)) {
-                    // eslint-disable-next-line @typescript-eslint/no-floating-promises
                     dLoad(true, `\`${relativePath}\` ${event === 'add' ? 'created' : 'removed'}`)
                     return
                 }
@@ -190,14 +186,11 @@ export class NuxtServiceLauncher {
             if (file.startsWith(pagesDir)) {
                 const hasPages = existsSync(pagesDir) ? readdirSync(pagesDir).length > 0 : false
                 if (this.#currentNuxt && !this.#currentNuxt.options.pages && hasPages) {
-                    // eslint-disable-next-line @typescript-eslint/no-floating-promises
                     dLoad(true, 'Pages enabled')
                     return
                 }
                 if (this.#currentNuxt && this.#currentNuxt.options.pages && !hasPages) {
-                    // eslint-disable-next-line @typescript-eslint/no-floating-promises
                     dLoad(true, 'Pages disabled')
-                    // eslint-disable-next-line no-useless-return
                     return
                 }
             }
