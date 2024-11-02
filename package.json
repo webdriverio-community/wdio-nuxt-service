@@ -49,7 +49,6 @@
     "release:minor": "npm run release -- minor",
     "release:major": "npm run release -- major",
     "test": "run-s test:*",
-    "test:setup": "node ./.github/scripts/link.mjs",
     "test:lint": "eslint",
     "test:e2e": "cd example && npx wdio run ./wdio.conf.ts",
     "watch": "npm run build -- --watch"
