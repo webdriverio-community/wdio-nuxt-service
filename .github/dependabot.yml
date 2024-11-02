@@ -9,7 +9,6 @@ updates:
     # Node.js updates require changes to .nvmrc
     - dependency-name: "@types/node"
 
-
   groups:
     patch-deps-updates-main:
       update-types:

@@ -4,6 +4,7 @@ import globals from 'globals'
 import tsParser from '@typescript-eslint/parser'
 
 export default [{
+    files: ['**/*.ts'],
     plugins: {
         '@typescript-eslint': typescriptEslint,
         unicorn,
@@ -13,6 +14,7 @@ export default [{
         'dist/**',
         'build/**',
         'example/.nuxt/**',
+        'example/.output/**',
     ],
 
     languageOptions: {
@@ -64,6 +66,10 @@ export default [{
             skipBlankLines: false,
             ignoreComments: false,
         }],
+        'no-unused-vars': 'off',
+        'no-undef': 'off',
+        'no-redeclare': 'off',
+        'dot-notation': 'off',
 
         'no-var': 'error',
         'unicode-bom': ['error', 'never'],
@@ -77,14 +83,5 @@ export default [{
         'unicorn/prefer-node-protocol': ['error'],
         'no-restricted-syntax': ['error', 'IfStatement > ExpressionStatement > AssignmentExpression'],
         'unicorn/prefer-ternary': 'error',
-    },
-}, {
-    files: ['**/*.ts'],
-    ignores: ['node_modules/**', 'dist/**', 'build/**'],
-    rules: {
-        'no-unused-vars': 'off',
-        'no-undef': 'off',
-        'no-redeclare': 'off',
-        'dot-notation': 'off',
-    },
+    }
 }]
