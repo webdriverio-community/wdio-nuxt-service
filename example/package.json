@@ -6,11 +6,20 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "wdio run ./wdio.conf.ts"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@types/node": "^18.17.0",
-    "nuxt": "^3.6.5"
+    "@nuxt/devtools": "^1.6.0",
+    "@wdio/cli": "^9.2.8",
+    "@wdio/local-runner": "^9.2.8",
+    "@wdio/mocha-framework": "^9.2.8",
+    "@wdio/spec-reporter": "^9.2.8",
+    "@wdio/types": "^9.2.2",
+    "@types/node": "^22.8.6",
+    "nuxt": "^3.13.2",
+    "tsx": "^4.19.2",
+    "wdio-nuxt-service": "workspace:*",
+    "webdriverio": "^9.2.8"
   }
 }

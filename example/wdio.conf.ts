@@ -20,7 +20,7 @@ export const config: WebdriverIO.Config = {
     // then the current working directory is where your `package.json` resides, so `wdio`
     // will be called from there.
     //
-    specs: ['./specs/**/*.e2e.ts'],
+    specs: ['./test/**/*.e2e.ts'],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
