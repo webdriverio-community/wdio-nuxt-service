@@ -60,7 +60,7 @@
     "eslint": "^9.14.0",
     "husky": "^9.1.6",
     "npm-run-all2": "^7.0.1",
-    "release-it": "^17.10.0",
+    "release-it": "^18.0.0",
     "rimraf": "^6.0.1",
     "typescript": "^5.6.3"
   },
@@ -75,7 +75,7 @@
     "h3": "^1.13.0",
     "listhen": "^1.9.0",
     "ohash": "^1.1.4",
-    "pathe": "^1.1.2",
+    "pathe": "^2.0.0",
     "perfect-debounce": "^1.0.0",
     "ufo": "^1.5.4"
   },
