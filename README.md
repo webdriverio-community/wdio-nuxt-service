@@ -6,6 +6,11 @@
 
 # WDIO Nuxt Service [![Tests](https://github.com/webdriverio-community/wdio-nuxt-service/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/webdriverio-community/wdio-nuxt-service/actions/workflows/test.yml)
 
+> [!IMPORTANT]
+> **This repository does not support WebdriverIO v10.** It stays in maintenance mode for WebdriverIO v9 only.
+>
+> It gets no new features. Only critical fixes for WebdriverIO v9 are possible.
+
 This service helps you to launch your application when using [Nuxt](https://nuxt.com/) as build tool. It automatically starts the Nuxt server using your `nuxt.conf.js` before launching the test.
 
 ## Installation
